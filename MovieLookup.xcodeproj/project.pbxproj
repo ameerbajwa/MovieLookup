@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		DE300EB62649AB74004091F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EB52649AB74004091F6 /* AppDelegate.swift */; };
 		DE300EB82649AB74004091F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EB72649AB74004091F6 /* SceneDelegate.swift */; };
-		DE300EBA2649AB74004091F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EB92649AB74004091F6 /* ViewController.swift */; };
 		DE300EBD2649AB74004091F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE300EBB2649AB74004091F6 /* Main.storyboard */; };
 		DE300EC02649AB74004091F6 /* MovieLookup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE300EBE2649AB74004091F6 /* MovieLookup.xcdatamodeld */; };
 		DE300EC22649AB78004091F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE300EC12649AB78004091F6 /* Assets.xcassets */; };
 		DE300EC52649AB78004091F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE300EC32649AB78004091F6 /* LaunchScreen.storyboard */; };
 		DE300ED02649AB78004091F6 /* MovieLookupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300ECF2649AB78004091F6 /* MovieLookupTests.swift */; };
 		DE300EDB2649AB78004091F6 /* MovieLookupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EDA2649AB78004091F6 /* MovieLookupUITests.swift */; };
+		DE300EEA2649AD80004091F6 /* MovieLookupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EE92649AD80004091F6 /* MovieLookupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		DE300EB22649AB74004091F6 /* MovieLookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieLookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE300EB52649AB74004091F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE300EB72649AB74004091F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE300EB92649AB74004091F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE300EBC2649AB74004091F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE300EBF2649AB74004091F6 /* MovieLookup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieLookup.xcdatamodel; sourceTree = "<group>"; };
 		DE300EC12649AB78004091F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		DE300ED62649AB78004091F6 /* MovieLookupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieLookupUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE300EDA2649AB78004091F6 /* MovieLookupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLookupUITests.swift; sourceTree = "<group>"; };
 		DE300EDC2649AB78004091F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE300EE92649AD80004091F6 /* MovieLookupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLookupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +101,9 @@
 		DE300EB42649AB74004091F6 /* MovieLookup */ = {
 			isa = PBXGroup;
 			children = (
+				DE300EE82649AD40004091F6 /* Controllers */,
 				DE300EB52649AB74004091F6 /* AppDelegate.swift */,
 				DE300EB72649AB74004091F6 /* SceneDelegate.swift */,
-				DE300EB92649AB74004091F6 /* ViewController.swift */,
 				DE300EBB2649AB74004091F6 /* Main.storyboard */,
 				DE300EC12649AB78004091F6 /* Assets.xcassets */,
 				DE300EC32649AB78004091F6 /* LaunchScreen.storyboard */,
@@ -129,6 +129,14 @@
 				DE300EDC2649AB78004091F6 /* Info.plist */,
 			);
 			path = MovieLookupUITests;
+			sourceTree = "<group>";
+		};
+		DE300EE82649AD40004091F6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE300EE92649AD80004091F6 /* MovieLookupViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,10 +270,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE300EBA2649AB74004091F6 /* ViewController.swift in Sources */,
 				DE300EB62649AB74004091F6 /* AppDelegate.swift in Sources */,
 				DE300EC02649AB74004091F6 /* MovieLookup.xcdatamodeld in Sources */,
 				DE300EB82649AB74004091F6 /* SceneDelegate.swift in Sources */,
+				DE300EEA2649AD80004091F6 /* MovieLookupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
