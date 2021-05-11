@@ -16,6 +16,14 @@
 		DE300ED02649AB78004091F6 /* MovieLookupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300ECF2649AB78004091F6 /* MovieLookupTests.swift */; };
 		DE300EDB2649AB78004091F6 /* MovieLookupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EDA2649AB78004091F6 /* MovieLookupUITests.swift */; };
 		DE300EEA2649AD80004091F6 /* MovieLookupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EE92649AD80004091F6 /* MovieLookupViewController.swift */; };
+		DE300EED264AD1E7004091F6 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EEC264AD1E7004091F6 /* WebService.swift */; };
+		DE300EEF264AD256004091F6 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EEE264AD256004091F6 /* APIKeys.swift */; };
+		DE300EF2264AD28F004091F6 /* MovieListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EF1264AD28F004091F6 /* MovieListItem.swift */; };
+		DE300EF5264AD2F9004091F6 /* MovieListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EF4264AD2F9004091F6 /* MovieListItemViewModel.swift */; };
+		DE300EF7264AD32A004091F6 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EF6264AD32A004091F6 /* MovieDetails.swift */; };
+		DE300EFA264AD356004091F6 /* MovieSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EF9264AD356004091F6 /* MovieSearchView.swift */; };
+		DE300EFC264AD388004091F6 /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EFB264AD388004091F6 /* MovieListCell.swift */; };
+		DE300EFE264AD3E7004091F6 /* MovieListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EFD264AD3E7004091F6 /* MovieListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,14 @@
 		DE300EDA2649AB78004091F6 /* MovieLookupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLookupUITests.swift; sourceTree = "<group>"; };
 		DE300EDC2649AB78004091F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE300EE92649AD80004091F6 /* MovieLookupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLookupViewController.swift; sourceTree = "<group>"; };
+		DE300EEC264AD1E7004091F6 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		DE300EEE264AD256004091F6 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		DE300EF1264AD28F004091F6 /* MovieListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItem.swift; sourceTree = "<group>"; };
+		DE300EF4264AD2F9004091F6 /* MovieListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItemViewModel.swift; sourceTree = "<group>"; };
+		DE300EF6264AD32A004091F6 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		DE300EF9264AD356004091F6 /* MovieSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchView.swift; sourceTree = "<group>"; };
+		DE300EFB264AD388004091F6 /* MovieListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCell.swift; sourceTree = "<group>"; };
+		DE300EFD264AD3E7004091F6 /* MovieListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,10 @@
 		DE300EB42649AB74004091F6 /* MovieLookup */ = {
 			isa = PBXGroup;
 			children = (
+				DE300EF0264AD26E004091F6 /* Models */,
+				DE300EF3264AD2E2004091F6 /* View Models */,
+				DE300EF8264AD33F004091F6 /* Views */,
+				DE300EEB264AD1D3004091F6 /* Service */,
 				DE300EE82649AD40004091F6 /* Controllers */,
 				DE300EB52649AB74004091F6 /* AppDelegate.swift */,
 				DE300EB72649AB74004091F6 /* SceneDelegate.swift */,
@@ -135,8 +155,44 @@
 			isa = PBXGroup;
 			children = (
 				DE300EE92649AD80004091F6 /* MovieLookupViewController.swift */,
+				DE300EFD264AD3E7004091F6 /* MovieListController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DE300EEB264AD1D3004091F6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DE300EEC264AD1E7004091F6 /* WebService.swift */,
+				DE300EEE264AD256004091F6 /* APIKeys.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DE300EF0264AD26E004091F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE300EF1264AD28F004091F6 /* MovieListItem.swift */,
+				DE300EF6264AD32A004091F6 /* MovieDetails.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE300EF3264AD2E2004091F6 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE300EF4264AD2F9004091F6 /* MovieListItemViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		DE300EF8264AD33F004091F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE300EF9264AD356004091F6 /* MovieSearchView.swift */,
+				DE300EFB264AD388004091F6 /* MovieListCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,10 +326,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE300EFC264AD388004091F6 /* MovieListCell.swift in Sources */,
+				DE300EEF264AD256004091F6 /* APIKeys.swift in Sources */,
 				DE300EB62649AB74004091F6 /* AppDelegate.swift in Sources */,
+				DE300EF2264AD28F004091F6 /* MovieListItem.swift in Sources */,
+				DE300EFE264AD3E7004091F6 /* MovieListController.swift in Sources */,
 				DE300EC02649AB74004091F6 /* MovieLookup.xcdatamodeld in Sources */,
 				DE300EB82649AB74004091F6 /* SceneDelegate.swift in Sources */,
+				DE300EFA264AD356004091F6 /* MovieSearchView.swift in Sources */,
+				DE300EED264AD1E7004091F6 /* WebService.swift in Sources */,
+				DE300EF5264AD2F9004091F6 /* MovieListItemViewModel.swift in Sources */,
 				DE300EEA2649AD80004091F6 /* MovieLookupViewController.swift in Sources */,
+				DE300EF7264AD32A004091F6 /* MovieDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Movie Look Up Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MovieLookup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MovieLookUpController" customModule="MovieLookup" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,10 +18,51 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="K7p-dQ-he6"/>
+                    <connections>
+                        <segue destination="atY-HT-Gj2" kind="show" identifier="movieListSegue" id="owJ-lC-8zV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="120.53571428571428"/>
+        </scene>
+        <!--Movie List Controller-->
+        <scene sceneID="Yyc-fg-WVm">
+            <objects>
+                <viewController id="atY-HT-Gj2" customClass="MovieListController" customModule="MovieLookup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o0m-Jk-RS6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cUb-6n-cVo">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Tix-iv-VmY">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tix-iv-VmY" id="mS4-dT-vlb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cUb-6n-cVo" firstAttribute="top" secondItem="HU8-C1-Dex" secondAttribute="top" id="D8y-Iz-QuR"/>
+                            <constraint firstAttribute="bottom" secondItem="cUb-6n-cVo" secondAttribute="bottom" id="TOr-H4-f27"/>
+                            <constraint firstItem="cUb-6n-cVo" firstAttribute="trailing" secondItem="HU8-C1-Dex" secondAttribute="trailing" id="XHq-iN-Pxm"/>
+                            <constraint firstItem="cUb-6n-cVo" firstAttribute="leading" secondItem="HU8-C1-Dex" secondAttribute="leading" id="v4K-Qg-C3v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HU8-C1-Dex"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sl6-iM-8ed"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6jI-Pr-y4x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2150.7246376811595" y="120.53571428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kxu-yF-Byl">
