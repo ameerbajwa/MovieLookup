@@ -11,14 +11,13 @@ import UIKit
 
 class MovieListController: UIViewController {
 
-//    @IBOutlet weak var movieListTableView: UITableView!
+    @IBOutlet weak var movieListTableView: UITableView!
     var movieListItemsViewModel: MovieListViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let nibFile = UINib(nibName: "MovieListCell", bundle: nil)
-        movieListTableView.register(nibFile, forCellReuseIdentifier: "movieListCell")
+        movieListTableView.register(MovieListCell.self, forCellReuseIdentifier: "movieListCell")
         movieListTableView.delegate = self
         movieListTableView.dataSource = self
         DispatchQueue.main.async {
@@ -37,15 +36,14 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieListItemsViewModel?.getCount() ?? 0
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 158
+        return 160
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = movieListTableView.dequeueReusableCell(withIdentifier: "movieListCell", for: indexPath) as? MovieListCell
         cell?.movieListItemViewModel = movieListItemsViewModel?.movieListViewModel[indexPath.row]
-        cell?.accessoryType = .disclosureIndicator
         return cell!
     }
 
