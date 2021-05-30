@@ -24,6 +24,9 @@
 		DE300EFA264AD356004091F6 /* MovieSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EF9264AD356004091F6 /* MovieSearchView.swift */; };
 		DE300EFC264AD388004091F6 /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EFB264AD388004091F6 /* MovieListCell.swift */; };
 		DE300EFE264AD3E7004091F6 /* MovieListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EFD264AD3E7004091F6 /* MovieListController.swift */; };
+		DE300F552659A3F3004091F6 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300F542659A3F3004091F6 /* MovieDetailViewController.swift */; };
+		DE300F57266310C8004091F6 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300F56266310C8004091F6 /* MovieDetailsViewModel.swift */; };
+		DE300F59266311FA004091F6 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300F58266311FA004091F6 /* MovieDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		DE300EF9264AD356004091F6 /* MovieSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchView.swift; sourceTree = "<group>"; };
 		DE300EFB264AD388004091F6 /* MovieListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCell.swift; sourceTree = "<group>"; };
 		DE300EFD264AD3E7004091F6 /* MovieListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListController.swift; sourceTree = "<group>"; };
+		DE300F542659A3F3004091F6 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		DE300F56266310C8004091F6 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
+		DE300F58266311FA004091F6 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,7 @@
 			children = (
 				DE300EE92649AD80004091F6 /* MovieLookupViewController.swift */,
 				DE300EFD264AD3E7004091F6 /* MovieListController.swift */,
+				DE300F542659A3F3004091F6 /* MovieDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				DE300EF4264AD2F9004091F6 /* MovieListItemViewModel.swift */,
+				DE300F56266310C8004091F6 /* MovieDetailsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 			children = (
 				DE300EF9264AD356004091F6 /* MovieSearchView.swift */,
 				DE300EFB264AD388004091F6 /* MovieListCell.swift */,
+				DE300F58266311FA004091F6 /* MovieDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,13 +335,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE300F57266310C8004091F6 /* MovieDetailsViewModel.swift in Sources */,
 				DE300EFC264AD388004091F6 /* MovieListCell.swift in Sources */,
 				DE300EEF264AD256004091F6 /* APIKeys.swift in Sources */,
 				DE300EB62649AB74004091F6 /* AppDelegate.swift in Sources */,
 				DE300EF2264AD28F004091F6 /* MovieListItem.swift in Sources */,
+				DE300F552659A3F3004091F6 /* MovieDetailViewController.swift in Sources */,
 				DE300EFE264AD3E7004091F6 /* MovieListController.swift in Sources */,
 				DE300EC02649AB74004091F6 /* MovieLookup.xcdatamodeld in Sources */,
 				DE300EB82649AB74004091F6 /* SceneDelegate.swift in Sources */,
+				DE300F59266311FA004091F6 /* MovieDetailsView.swift in Sources */,
 				DE300EFA264AD356004091F6 /* MovieSearchView.swift in Sources */,
 				DE300EED264AD1E7004091F6 /* WebService.swift in Sources */,
 				DE300EF5264AD2F9004091F6 /* MovieListItemViewModel.swift in Sources */,

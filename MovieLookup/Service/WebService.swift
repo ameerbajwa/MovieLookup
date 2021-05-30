@@ -43,4 +43,36 @@ class WebService {
         })
         dataTask.resume()
     }
+    
+    func getMovie(movieIMDBId: String, completion: @escaping ((MovieDetails?) -> Void)) {
+        let headers = [
+            "x-rapidapi-key": APIKeys.rapidApiKey,
+            "x-rapidapi-host": APIKeys.rapidApiHost
+        ]
+
+        let request = NSMutableURLRequest(url: NSURL(string: "https://movie-database-imdb-alternative.p.rapidapi.com/?i=\(movieIMDBId)&r=json")! as URL,
+                                                cachePolicy: .useProtocolCachePolicy,
+                                            timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+
+            guard let data = data, error == nil else {
+                print("error: \(error)")
+                completion(nil)
+                return
+            }
+            var movie: MovieDetails?
+            do {
+                movie = try JSONDecoder().decode(MovieDetails.self, from: data)
+            } catch {
+                print("unexpected error: \(error).")
+            }
+            movie == nil ? completion(nil) : completion(movie)
+        })
+        dataTask.resume()
+    }
+    
 }

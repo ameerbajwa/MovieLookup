@@ -13,6 +13,7 @@ class MovieListController: UIViewController {
 
     @IBOutlet weak var movieListTableView: UITableView!
     var movieListItemsViewModel: MovieListViewModel?
+    var movieDetailsViewModel: MovieDetailsViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,39 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
         cell?.movieListItemViewModel = movieListItemsViewModel?.movieListViewModel[indexPath.row]
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let imdbId = self.movieListItemsViewModel?.movieListViewModel[indexPath.row].imdbID {
+            callGetMovieAPI(movieId: imdbId)
+        }
+    }
 
+}
 
+extension MovieListController {
+    
+    func callGetMovieAPI(movieId: String) {
+        WebService().getMovie(movieIMDBId: movieId) { (movieDetails) in
+            if let movieDetails = movieDetails {
+                print(movieDetails)
+                self.movieDetailsViewModel = MovieDetailsViewModel(movieDetails: movieDetails)
+                print(self.movieDetailsViewModel?.title)
+            }
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "movieDetailsSegue", sender: nil)
+            }
+        }
+    }
+    
+}
+
+extension MovieListController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "movieDetailsSegue" {
+            let vc = segue.destination as! MovieDetailViewController
+            vc.movieDetailsViewModel = self.movieDetailsViewModel
+        }
+    }
+    
 }
