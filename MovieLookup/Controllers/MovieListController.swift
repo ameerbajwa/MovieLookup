@@ -63,7 +63,7 @@ extension MovieListController {
             if let movieDetails = movieDetails {
                 print(movieDetails)
                 self.movieDetailsViewModel = MovieDetailsViewModel(movieDetails: movieDetails)
-                print(self.movieDetailsViewModel?.title)
+                print(self.movieDetailsViewModel?.movieTitle)
             }
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "movieDetailsSegue", sender: nil)

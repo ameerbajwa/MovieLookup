@@ -27,6 +27,7 @@
 		DE300F552659A3F3004091F6 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300F542659A3F3004091F6 /* MovieDetailViewController.swift */; };
 		DE300F57266310C8004091F6 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300F56266310C8004091F6 /* MovieDetailsViewModel.swift */; };
 		DE300F59266311FA004091F6 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300F58266311FA004091F6 /* MovieDetailsView.swift */; };
+		DE300F5C2668782C004091F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300F5B2668782C004091F6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		DE300F542659A3F3004091F6 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		DE300F56266310C8004091F6 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
 		DE300F58266311FA004091F6 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		DE300F5B2668782C004091F6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		DE300EB42649AB74004091F6 /* MovieLookup */ = {
 			isa = PBXGroup;
 			children = (
+				DE300F5A2668772F004091F6 /* Utilities */,
 				DE300EF0264AD26E004091F6 /* Models */,
 				DE300EF3264AD2E2004091F6 /* View Models */,
 				DE300EF8264AD33F004091F6 /* Views */,
@@ -202,6 +205,14 @@
 				DE300F58266311FA004091F6 /* MovieDetailsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DE300F5A2668772F004091F6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DE300F5B2668782C004091F6 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +353,7 @@
 				DE300EF2264AD28F004091F6 /* MovieListItem.swift in Sources */,
 				DE300F552659A3F3004091F6 /* MovieDetailViewController.swift in Sources */,
 				DE300EFE264AD3E7004091F6 /* MovieListController.swift in Sources */,
+				DE300F5C2668782C004091F6 /* Constants.swift in Sources */,
 				DE300EC02649AB74004091F6 /* MovieLookup.xcdatamodeld in Sources */,
 				DE300EB82649AB74004091F6 /* SceneDelegate.swift in Sources */,
 				DE300F59266311FA004091F6 /* MovieDetailsView.swift in Sources */,
