@@ -49,6 +49,7 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         if let imdbId = self.movieListItemsViewModel?.movieListViewModel[indexPath.row].imdbID {
             callGetMovieAPI(movieId: imdbId)
         }

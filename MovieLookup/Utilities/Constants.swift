@@ -12,5 +12,6 @@ struct Constants {
     
     static var MOVIE_TITLE_LABEL = "Title"
     static var MOVIE_DATE_RELEASED_LABEL = "Date Released"
+    static var MOVIE_RATING_LABEL = "Rating"
     
 }

@@ -15,6 +15,7 @@ class MovieDetailsView: UIView {
     
     var movieTitleLabel = UILabel()
     var movieDateReleasedLabel = UILabel()
+    var movieRatingLabel = UILabel()
     var moviePosterImageView = UIImageView()
     
     func setUp() {
@@ -46,16 +47,10 @@ class MovieDetailsView: UIView {
             ])
             
             movieDateReleasedLabel.attributedText = setUpLabel(label: Constants.MOVIE_DATE_RELEASED_LABEL, labelValue: safeVM.movieDateReleased)
-            movieDateReleasedLabel.numberOfLines = 0
+            setUpConstraints(label: self.movieDateReleasedLabel, previousLabel: self.movieTitleLabel)
             
-            self.addSubview(movieDateReleasedLabel)
-            movieDateReleasedLabel.translatesAutoresizingMaskIntoConstraints = false
-            
-            NSLayoutConstraint.activate([
-                movieDateReleasedLabel.topAnchor.constraint(equalTo: self.movieTitleLabel.bottomAnchor, constant: 10.0),
-                movieDateReleasedLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15.0),
-                movieDateReleasedLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15.0)
-            ])
+            movieRatingLabel.attributedText = setUpLabel(label: Constants.MOVIE_RATING_LABEL, labelValue: safeVM.movieRating)
+            setUpConstraints(label: self.movieRatingLabel, previousLabel: self.movieDateReleasedLabel)
             
         }
         
@@ -72,6 +67,21 @@ class MovieDetailsView: UIView {
         fullLabel.append(NSAttributedString(string: labelValue, attributes: labelValueAttributes))
         
         return fullLabel
+        
+    }
+    
+    func setUpConstraints(label: UILabel, previousLabel: UILabel) {
+        
+        label.numberOfLines = 0
+        
+        self.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: previousLabel.bottomAnchor, constant: 10.0),
+            label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15.0),
+            label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15.0)
+        ])
         
     }
     
