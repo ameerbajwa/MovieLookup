@@ -10,6 +10,7 @@ import UIKit
 
 class MovieDetailViewController: UIViewController {
     
+    let scrollView = UIScrollView()
     let movieDetailsView = MovieDetailsView()
     var movieDetailsViewModel: MovieDetailsViewModel?
 
@@ -18,18 +19,29 @@ class MovieDetailViewController: UIViewController {
         
         self.navigationItem.title = "Movie Details"
 
-        self.view.addSubview(movieDetailsView)
-        movieDetailsView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            movieDetailsView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            movieDetailsView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
-            movieDetailsView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-            movieDetailsView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor)
-        ])
+        self.scrollView.addSubview(movieDetailsView)
+        movieDetailsView.translatesAutoresizingMaskIntoConstraints = false
         
         movieDetailsView.vm = movieDetailsViewModel
         movieDetailsView.setUp()
+        
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor),
+            
+            movieDetailsView.topAnchor.constraint(equalTo: self.scrollView.topAnchor),
+            movieDetailsView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor),
+            movieDetailsView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor),
+            movieDetailsView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor),
+            movieDetailsView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor)
+        ])
+    
     }
 
 }
