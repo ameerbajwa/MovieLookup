@@ -11,6 +11,8 @@ import UIKit
 
 class MovieLookUpController: UIViewController, MovieSearchButtonDelegate {
 
+    var activityIndicator: BaseActivityIndicator?
+    
     var movieSearchView = MovieSearchView()
     var movieListItemsViewModel = MovieListViewModel()
 
@@ -29,6 +31,11 @@ class MovieLookUpController: UIViewController, MovieSearchButtonDelegate {
     }
 
     func movieSearchButtonClicked() {
+        
+        DispatchQueue.main.async {
+            self.activityIndicator?.showActivityIndicator()
+        }
+        
         if let movieSearchText = movieSearchView.movieSearchTextField.text {
             print(movieSearchText)
             WebService().searchIMDB(movieSearchTerm: movieSearchText) { movieList in
@@ -36,6 +43,7 @@ class MovieLookUpController: UIViewController, MovieSearchButtonDelegate {
                     self.movieListItemsViewModel.movieListViewModel = movieList.Search.map(MovieListItemViewModel.init)
                     print(self.movieListItemsViewModel.movieListViewModel)
                     DispatchQueue.main.async {
+                        self.activityIndicator?.hideActivityIndicator()
                         self.performSegue(withIdentifier: "movieListSegue", sender: nil)
                     }
                 }

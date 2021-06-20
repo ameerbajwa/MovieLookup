@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class MovieListController: UIViewController {
+    
+    var activityIndicator: BaseActivityIndicator?
 
     @IBOutlet weak var movieListTableView: UITableView!
     var movieListItemsViewModel: MovieListViewModel?
@@ -60,6 +62,10 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
 extension MovieListController {
     
     func callGetMovieAPI(movieId: String) {
+        DispatchQueue.main.async {
+            self.activityIndicator?.showActivityIndicator()
+        }
+        
         WebService().getMovie(movieIMDBId: movieId) { (movieDetails) in
             if let movieDetails = movieDetails {
                 print(movieDetails)
@@ -67,6 +73,7 @@ extension MovieListController {
                 print(self.movieDetailsViewModel?.movieTitle)
             }
             DispatchQueue.main.async {
+                self.activityIndicator?.hideActivityIndicator()
                 self.performSegue(withIdentifier: "movieDetailsSegue", sender: nil)
             }
         }
