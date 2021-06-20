@@ -11,8 +11,8 @@ import UIKit
 
 class MovieListController: UIViewController {
     
-    var activityIndicator: BaseActivityIndicator?
-
+    let spinner = SpinnerViewController()
+    
     @IBOutlet weak var movieListTableView: UITableView!
     var movieListItemsViewModel: MovieListViewModel?
     var movieDetailsViewModel: MovieDetailsViewModel?
@@ -52,6 +52,9 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        DispatchQueue.main.async {
+            self.spinner.createSpinnerView(view: self.view)
+        }
         if let imdbId = self.movieListItemsViewModel?.movieListViewModel[indexPath.row].imdbID {
             callGetMovieAPI(movieId: imdbId)
         }
@@ -62,9 +65,6 @@ extension MovieListController: UITableViewDelegate, UITableViewDataSource {
 extension MovieListController {
     
     func callGetMovieAPI(movieId: String) {
-        DispatchQueue.main.async {
-            self.activityIndicator?.showActivityIndicator()
-        }
         
         WebService().getMovie(movieIMDBId: movieId) { (movieDetails) in
             if let movieDetails = movieDetails {
@@ -73,7 +73,7 @@ extension MovieListController {
                 print(self.movieDetailsViewModel?.movieTitle)
             }
             DispatchQueue.main.async {
-                self.activityIndicator?.hideActivityIndicator()
+                self.spinner.dismissSpinnerView()
                 self.performSegue(withIdentifier: "movieDetailsSegue", sender: nil)
             }
         }

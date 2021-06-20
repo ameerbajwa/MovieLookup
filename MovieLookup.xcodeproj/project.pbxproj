@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE2B2342267FCF5000755ECD /* BaseActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B2341267FCF5000755ECD /* BaseActivityIndicator.swift */; };
+		DE2B2344267FD2C100755ECD /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B2343267FD2C100755ECD /* SpinnerViewController.swift */; };
 		DE300EB62649AB74004091F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EB52649AB74004091F6 /* AppDelegate.swift */; };
 		DE300EB82649AB74004091F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300EB72649AB74004091F6 /* SceneDelegate.swift */; };
 		DE300EBD2649AB74004091F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE300EBB2649AB74004091F6 /* Main.storyboard */; };
@@ -49,7 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DE2B2341267FCF5000755ECD /* BaseActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseActivityIndicator.swift; sourceTree = "<group>"; };
+		DE2B2343267FD2C100755ECD /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		DE300EB22649AB74004091F6 /* MovieLookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieLookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE300EB52649AB74004091F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE300EB72649AB74004091F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				DE300F5B2668782C004091F6 /* Constants.swift */,
-				DE2B2341267FCF5000755ECD /* BaseActivityIndicator.swift */,
+				DE2B2343267FD2C100755ECD /* SpinnerViewController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -352,7 +352,6 @@
 				DE300F57266310C8004091F6 /* MovieDetailsViewModel.swift in Sources */,
 				DE300EFC264AD388004091F6 /* MovieListCell.swift in Sources */,
 				DE300EEF264AD256004091F6 /* APIKeys.swift in Sources */,
-				DE2B2342267FCF5000755ECD /* BaseActivityIndicator.swift in Sources */,
 				DE300EB62649AB74004091F6 /* AppDelegate.swift in Sources */,
 				DE300EF2264AD28F004091F6 /* MovieListItem.swift in Sources */,
 				DE300F552659A3F3004091F6 /* MovieDetailViewController.swift in Sources */,
@@ -365,6 +364,7 @@
 				DE300EED264AD1E7004091F6 /* WebService.swift in Sources */,
 				DE300EF5264AD2F9004091F6 /* MovieListItemViewModel.swift in Sources */,
 				DE300EEA2649AD80004091F6 /* MovieLookupViewController.swift in Sources */,
+				DE2B2344267FD2C100755ECD /* SpinnerViewController.swift in Sources */,
 				DE300EF7264AD32A004091F6 /* MovieDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

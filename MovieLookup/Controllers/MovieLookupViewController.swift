@@ -11,7 +11,7 @@ import UIKit
 
 class MovieLookUpController: UIViewController, MovieSearchButtonDelegate {
 
-    var activityIndicator: BaseActivityIndicator?
+    let spinner = SpinnerViewController()
     
     var movieSearchView = MovieSearchView()
     var movieListItemsViewModel = MovieListViewModel()
@@ -29,11 +29,18 @@ class MovieLookUpController: UIViewController, MovieSearchButtonDelegate {
         movieSearchView.delegate = self
         movieSearchView.setUpUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.movieSearchView.movieSearchButton.isEnabled = true
+        self.movieSearchView.movieSearchTextField.isEnabled = true
+    }
 
     func movieSearchButtonClicked() {
         
         DispatchQueue.main.async {
-            self.activityIndicator?.showActivityIndicator()
+            self.spinner.createSpinnerView(view: self.view)
+            self.movieSearchView.movieSearchButton.isEnabled = false
+            self.movieSearchView.movieSearchTextField.isEnabled = false
         }
         
         if let movieSearchText = movieSearchView.movieSearchTextField.text {
@@ -43,7 +50,7 @@ class MovieLookUpController: UIViewController, MovieSearchButtonDelegate {
                     self.movieListItemsViewModel.movieListViewModel = movieList.Search.map(MovieListItemViewModel.init)
                     print(self.movieListItemsViewModel.movieListViewModel)
                     DispatchQueue.main.async {
-                        self.activityIndicator?.hideActivityIndicator()
+                        self.spinner.dismissSpinnerView()
                         self.performSegue(withIdentifier: "movieListSegue", sender: nil)
                     }
                 }
@@ -57,6 +64,5 @@ class MovieLookUpController: UIViewController, MovieSearchButtonDelegate {
             vc.movieListItemsViewModel = movieListItemsViewModel
         }
     }
-
 
 }
