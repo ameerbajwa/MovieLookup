@@ -10,7 +10,7 @@ import Foundation
 
 class WebService {
     
-    func searchIMDB(movieSearchTerm: String, completion: @escaping ((MovieList?) -> Void)) {
+    func searchIMDB(movieSearchTerm: String, onSuccess: @escaping ((MovieList?) -> Void), onFailure: @escaping (Error) -> Void ) {
         let headers = [
             "x-rapidapi-key": APIKeys.rapidApiKey,
             "x-rapidapi-host": APIKeys.rapidApiHost
@@ -29,17 +29,18 @@ class WebService {
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
 
             guard let data = data, error == nil else {
-                print("error: \(error)")
-                completion(nil)
+                print("error: \(error!)")
+//                completion(nil)
+                onFailure(error!)
                 return
             }
             var movies: MovieList?
             do {
                 movies = try JSONDecoder().decode(MovieList.self, from: data)
             } catch {
-                print("unexpected error: \(error).")
+                onFailure(error)
             }
-            movies == nil ? completion(nil) : completion(movies)
+            movies == nil ? onSuccess(nil) : onSuccess(movies) // completion(nil)
         })
         dataTask.resume()
     }

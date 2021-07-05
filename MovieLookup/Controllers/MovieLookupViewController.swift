@@ -45,7 +45,8 @@ class MovieLookUpController: UIViewController, MovieSearchButtonDelegate {
         
         if let movieSearchText = movieSearchView.movieSearchTextField.text {
             print(movieSearchText)
-            WebService().searchIMDB(movieSearchTerm: movieSearchText) { movieList in
+            
+            WebService().searchIMDB(movieSearchTerm: movieSearchText, onSuccess: { (movieList) in
                 if let movieList = movieList {
                     self.movieListItemsViewModel.movieListViewModel = movieList.Search.map(MovieListItemViewModel.init)
                     print(self.movieListItemsViewModel.movieListViewModel)
@@ -54,7 +55,15 @@ class MovieLookUpController: UIViewController, MovieSearchButtonDelegate {
                         self.performSegue(withIdentifier: "movieListSegue", sender: nil)
                     }
                 }
+            }) { (error) in
+                DispatchQueue.main.async {
+                    self.spinner.dismissSpinnerView()
+                    self.movieSearchView.movieSearchButton.isEnabled = true
+                    self.movieSearchView.movieSearchTextField.isEnabled = true
+                    print(error)
+                }
             }
+
         }
     }
 

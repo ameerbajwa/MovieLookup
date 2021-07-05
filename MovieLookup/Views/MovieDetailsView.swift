@@ -31,6 +31,7 @@ class MovieDetailsView: UIView {
         if let safeVM = vm {
             
             moviePosterImageView.image = UIImage(data: safeVM.setImage(stringUrl: safeVM.moviePosterUrl)!)
+            moviePosterImageView.sizeToFit()
             
             self.addSubview(moviePosterImageView)
             moviePosterImageView.translatesAutoresizingMaskIntoConstraints = false
